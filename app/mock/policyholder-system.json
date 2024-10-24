@@ -1,0 +1,92 @@
+{
+  "uuid": "3480b264-961e-4eb0-b682-1c0c404a1d0b",
+  "lastMigration": 32,
+  "name": "Policyholder system",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3001,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "356c5c2c-bb6e-4d89-935e-fe55c5191678",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "api/policyholders",
+      "responses": [
+        {
+          "uuid": "32f22824-79eb-46aa-9da6-4fb2a897b283",
+          "body": "{\n  \"code\": \"{{queryParam 'code' '43bda7c2-bb84-4ace-9704-efcef436065b'}}\",\n  \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n  \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n  \"introducer_code\": \"{{faker 'string.uuid'}}\",\n  \"l\": [\n    {{# repeat 5 }}\n      {\n        \"code\": \"{{faker 'string.uuid'}}\",\n        \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n        \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n        \"introducer_code\": \"{{oneOf (array '55da8018-945b-4ff7-8c01-3f6663cb5880' '38622bda-5f9a-4c38-8d95-3747cfd96453' '43bda7c2-bb84-4ace-9704-efcef436065b')}}\"\n      },\n    {{/ repeat }}\n  ],\n  \"r\": [\n    {{# repeat 6 }}\n      {\n        \"code\": \"{{queryParam 'code' 'uuid'}}\",\n        \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n        \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n        \"introducer_code\": \"{{oneOf (array 'a625a2a4-b586-47a5-a8fa-ced4ba763895' 'fcfa1851-9752-49b6-b954-e6fd8c26de18' '43bda7c2-bb84-4ace-9704-efcef436065b')}}\"\n      },\n    {{/ repeat }}\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "356c5c2c-bb6e-4d89-935e-fe55c5191678"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    },
+    {
+      "key": "Access-Control-Allow-Origin",
+      "value": "*"
+    },
+    {
+      "key": "Access-Control-Allow-Methods",
+      "value": "GET,POST,PUT,PATCH,DELETE,HEAD,OPTIONS"
+    },
+    {
+      "key": "Access-Control-Allow-Headers",
+      "value": "Content-Type, Origin, Accept, Authorization, Content-Length, X-Requested-With"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}
