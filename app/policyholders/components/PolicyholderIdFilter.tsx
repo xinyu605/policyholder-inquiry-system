@@ -25,7 +25,7 @@ const PolicyholderIdFilter: FC<PolicyholderIdFilterProps> = ({ onSearch }) => {
     >
       <span>保戶編號</span>
       <input
-        className="border rounded"
+        className="border rounded flex-grow"
         value={keyword}
         onChange={handleChangeKeyword}
       />
