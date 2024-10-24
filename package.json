@@ -3,11 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "concurrently \"mockoon-cli start --data ./app/mock/policyholder-system.json\" \"next dev\"",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "mockoon": "mockoon-cli start --data ./app/mock/policyholder-system.json "
+    "lint": "next lint"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.59.16",
@@ -22,6 +21,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "concurrently": "^9.0.1",
     "eslint": "^8",
     "eslint-config-next": "15.0.0",
     "postcss": "^8",
