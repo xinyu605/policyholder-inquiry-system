@@ -3,6 +3,8 @@ import { type FC, type ReactNode } from 'react';
 
 import '@/app/globals.css';
 
+import ReactQueryClientProvider from '@/app/components/ReactQueryClientProvider';
+
 type RootLayoutProps = Readonly<{ children: ReactNode }>;
 
 export const metadata: Metadata = {
@@ -12,9 +14,11 @@ export const metadata: Metadata = {
 };
 
 const RootLayout: FC<RootLayoutProps> = ({ children }) => (
-  <html lang="en">
-    <body>{children}</body>
-  </html>
+  <ReactQueryClientProvider>
+    <html lang="en">
+      <body>{children}</body>
+    </html>
+  </ReactQueryClientProvider>
 );
 
 export default RootLayout;
