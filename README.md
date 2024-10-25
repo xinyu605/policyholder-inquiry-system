@@ -27,5 +27,6 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Dev Tools
 
+- [clsx](https://www.npmjs.com/package/clsx) - A tiny utility for constructing className strings conditionally.
 - [concurrently](https://www.npmjs.com/package/concurrently) - Run multiple commands concurrently.
 - [@mockoon/cli](https://www.npmjs.com/package/@mockoon/cli) - A lightweight and fast NPM package to deploy mock APIs by feed it with a Mockoon's data file, or OpenAPI specification file (JSON or YAML).
