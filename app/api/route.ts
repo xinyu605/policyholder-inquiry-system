@@ -7,13 +7,16 @@ interface GetPolicyholdersPayload {
   code: string;
 }
 
-interface Policyholder {
+export interface PolicyholderInfo {
   code: string;
   introducer_code: string;
   name: string;
   registration_date: Date;
-  l: Policyholder[];
-  r: Policyholder[];
+}
+
+export interface Policyholder extends PolicyholderInfo {
+  l: PolicyholderInfo[];
+  r: PolicyholderInfo[];
 }
 
 export const useGetPolicyholders = (
