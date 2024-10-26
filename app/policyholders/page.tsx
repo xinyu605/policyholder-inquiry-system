@@ -2,49 +2,15 @@
 
 import { useCallback, useState, type FC } from 'react';
 
+import { useGetPolicyholders } from '@/app/api/route';
 import {
-  type Policyholder,
-  type PolicyholderInfo,
-  useGetPolicyholders,
-} from '@/app/api/route';
+  buildTree,
+  getMaxNodes,
+  MAX_SUBTREE_LEVEL,
+} from '@/app/policyholders/lib/utils';
 
 import PolicyholderIdFilter from '@/app/policyholders/components/PolicyholderIdFilter';
-import PolicyholderTree, {
-  type TreeNodeType,
-} from './components/PolicyholderTree';
-
-const buildTree = (policyholder: Policyholder): TreeNodeType => {
-  const { code, introducer_code, name, registration_date, l, r } = policyholder;
-
-  const tree: TreeNodeType = {
-    code,
-    introducer_code,
-    name,
-    registration_date,
-  };
-
-  const getNextTreeNode = (nodes: PolicyholderInfo[]) => {
-    if (nodes.length === 0) return;
-    const currentInfo = nodes[0];
-    const remainingPolicyholders = nodes.toSpliced(0, 1);
-    const half = Math.ceil(remainingPolicyholders.length / 2);
-    const firstHalf = remainingPolicyholders.splice(0, half);
-    return { ...currentInfo, l: firstHalf, r: remainingPolicyholders };
-  };
-
-  const nextLeftTreeNode = getNextTreeNode(l);
-  const nextRightTreeNode = getNextTreeNode(r);
-
-  if (nextLeftTreeNode) {
-    tree.left = buildTree(nextLeftTreeNode);
-  }
-
-  if (nextRightTreeNode) {
-    tree.right = buildTree(nextRightTreeNode);
-  }
-
-  return tree;
-};
+import PolicyholderTree from '@/app/policyholders/components/PolicyholderTree';
 
 const Policyholders: FC = () => {
   const [code, setCode] = useState('');
@@ -54,9 +20,19 @@ const Policyholders: FC = () => {
     { enabled: !!code }
   );
 
-  const policyholderRoot = policyholdersData
-    ? buildTree(policyholdersData)
-    : null;
+  const policyholderRoot = (() => {
+    if (!policyholdersData) return null;
+
+    const maxIdx = getMaxNodes(MAX_SUBTREE_LEVEL) - 1;
+
+    const limitedPolicyholders = {
+      ...policyholdersData,
+      l: policyholdersData.l.slice(0, maxIdx),
+      r: policyholdersData.r.slice(0, maxIdx),
+    };
+
+    return buildTree(limitedPolicyholders);
+  })();
 
   const handleSearchClient = useCallback((newKeyword: string) => {
     setCode(newKeyword);
