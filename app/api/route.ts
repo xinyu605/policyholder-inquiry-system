@@ -34,3 +34,21 @@ export const useGetPolicyholders = (
     },
   });
 };
+
+type GetTopPolicyholdersPayload = GetPolicyholdersPayload;
+
+export const useGetTopPolicyholders = (
+  { code }: GetTopPolicyholdersPayload,
+  options?: QueryOptions<Policyholder>
+) => {
+  return useQuery({
+    ...options,
+    queryKey: ['topPolicyholders', code],
+    queryFn: async () => {
+      const res = await request.get<Policyholder>(
+        `${Route.POLICYHOLDERS}/${code}/top`
+      );
+      return res.data;
+    },
+  });
+};

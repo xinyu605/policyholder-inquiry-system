@@ -98,12 +98,80 @@
         }
       ],
       "responseMode": null
+    },
+    {
+      "uuid": "12df4a59-3233-41ae-8cd6-3247d3479ce1",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "api/policyholders/:code/top",
+      "responses": [
+        {
+          "uuid": "5e5c0071-5c02-4a8e-8371-f1c61d7631f7",
+          "body": "{\n  \"code\": \"1000\",\n  \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n  \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n  \"introducer_code\": \"1001\",\n  \"l\": [\n    {\n      \"code\": \"1011\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"1000\"\n    },\n    {\n      \"code\": \"1012\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"1011\"\n    },\n    {\n      \"code\": \"0001\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"1001\"\n    },\n    {\n      \"code\": \"0002\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0001\"\n    },\n    {\n      \"code\": \"0003\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0002\"\n    },\n    {\n      \"code\": \"0004\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0001\"\n    },\n    {\n      \"code\": \"0005\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0003\"\n    },\n    {\n      \"code\": \"0006\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0004\"\n    },\n    {\n      \"code\": \"0007\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0002\"\n    },\n    {\n      \"code\": \"0008\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0001\"\n    },\n    {\n      \"code\": \"0009\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0004\"\n    },\n    {\n      \"code\": \"0010\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0006\"\n    },\n    {\n      \"code\": \"0011\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0001\"\n    },\n    {\n      \"code\": \"0012\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0010\"\n    },\n    {\n      \"code\": \"0013\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0001\"\n    }\n  ],\n  \"r\": [\n    {\n      \"code\": \"1002\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"1000\"\n    },\n    {\n      \"code\": \"1003\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"1002\"\n    },\n    {\n      \"code\": \"1004\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"1000\"\n    },\n    {\n      \"code\": \"0014\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0001\"\n    },\n    {\n      \"code\": \"0015\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0001\"\n    },\n    {\n      \"code\": \"0016\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0014\"\n    },\n    {\n      \"code\": \"0017\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0014\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "query 0001 top",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "code",
+              "value": "0001",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "6cffa112-2ef4-4033-b1c6-114a2acdc95f",
+          "body": "{\n  \"code\": \"2000\",\n  \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n  \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n  \"introducer_code\": \"1001\",\n  \"l\": [\n     {\n      \"code\": \"1100\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"2000\"\n    },\n    {\n      \"code\": \"1000\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"2000\"\n    },\n    {\n      \"code\": \"1011\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"1000\"\n    },\n    {\n      \"code\": \"1012\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"1011\"\n    },\n    {\n      \"code\": \"0001\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"1001\"\n    },\n    {\n      \"code\": \"0002\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0001\"\n    },\n    {\n      \"code\": \"0003\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0002\"\n    },\n    {\n      \"code\": \"0004\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0001\"\n    },\n    {\n      \"code\": \"0005\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0003\"\n    },\n    {\n      \"code\": \"0006\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0004\"\n    },\n    {\n      \"code\": \"0007\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0002\"\n    },\n    {\n      \"code\": \"0008\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0001\"\n    },\n    {\n      \"code\": \"0009\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0004\"\n    },\n    {\n      \"code\": \"0010\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0006\"\n    },\n    {\n      \"code\": \"0011\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0001\"\n    },\n    {\n      \"code\": \"0012\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0010\"\n    },\n    {\n      \"code\": \"0013\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0001\"\n    }\n  ],\n  \"r\": [\n    {\n      \"code\": \"1002\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"1000\"\n    },\n    {\n      \"code\": \"1003\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"1002\"\n    },\n    {\n      \"code\": \"1004\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"1000\"\n    },\n    {\n      \"code\": \"0014\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0001\"\n    },\n    {\n      \"code\": \"0015\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0001\"\n    },\n    {\n      \"code\": \"0016\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0014\"\n    },\n    {\n      \"code\": \"0017\",\n      \"name\": \"{{faker 'person.firstName'}} {{faker 'person.lastName'}}\",\n      \"registration_date\": \"{{date '2023-11-20' '2024-08-25'}}\",\n      \"introducer_code\": \"0014\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "query 1000 top",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "code",
+              "value": "1000",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
     }
   ],
   "rootChildren": [
     {
       "type": "route",
       "uuid": "356c5c2c-bb6e-4d89-935e-fe55c5191678"
+    },
+    {
+      "type": "route",
+      "uuid": "12df4a59-3233-41ae-8cd6-3247d3479ce1"
     }
   ],
   "proxyMode": false,
