@@ -1,9 +1,9 @@
 import { type PolicyholderInfo, type Policyholder } from '@/app/api/route';
 import { type TreeNodeType } from '@/app/policyholders/components/PolicyholderTree';
 
-export const MAX_SUBTREE_LEVEL = 3;
+const MAX_SUBTREE_LEVEL = 3;
 
-export const getMaxNodes = (level: number) => {
+const getMaxNodes = (level: number) => {
   let count = 0;
   for (let i = 0; i < level; i++) {
     count += 2 ** i;
@@ -11,7 +11,7 @@ export const getMaxNodes = (level: number) => {
   return count;
 };
 
-export const buildTree = (policyholder: Policyholder): TreeNodeType => {
+const buildTree = (policyholder: Policyholder): TreeNodeType => {
   const { code, introducer_code, name, registration_date, l, r } = policyholder;
 
   const tree: TreeNodeType = {
@@ -42,4 +42,16 @@ export const buildTree = (policyholder: Policyholder): TreeNodeType => {
   }
 
   return tree;
+};
+
+export const getPolicyholdersRoot = (data: Policyholder) => {
+  const maxIdx = getMaxNodes(MAX_SUBTREE_LEVEL);
+
+  const limitedPolicyholders = {
+    ...data,
+    l: data.l.slice(0, maxIdx),
+    r: data.r.slice(0, maxIdx),
+  };
+
+  return buildTree(limitedPolicyholders);
 };
