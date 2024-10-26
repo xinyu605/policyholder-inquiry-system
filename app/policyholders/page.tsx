@@ -23,7 +23,7 @@ const Policyholders: FC = () => {
   const policyholderRoot = (() => {
     if (!policyholdersData) return null;
 
-    const maxIdx = getMaxNodes(MAX_SUBTREE_LEVEL) - 1;
+    const maxIdx = getMaxNodes(MAX_SUBTREE_LEVEL);
 
     const limitedPolicyholders = {
       ...policyholdersData,
@@ -42,7 +42,6 @@ const Policyholders: FC = () => {
     <div className="flex flex-col gap-4 p-6">
       <h2 className="pb-2 text-2xl">保戶關係查詢</h2>
       <PolicyholderIdFilter onSearch={handleSearchClient} />
-      <span>test code: 43bda7c2-bb84-4ace-9704-efcef436065b</span>
       <h2 className="pt-2 text-2xl">關係圖</h2>
       {policyholderRoot && <PolicyholderTree root={policyholderRoot} />}
     </div>
