@@ -25,7 +25,7 @@ export const useGetPolicyholders = (
 ) => {
   return useQuery({
     ...options,
-    queryKey: ['policyholders'],
+    queryKey: ['policyholders', code],
     queryFn: async () => {
       const res = await request.get<Policyholder>(
         `${Route.POLICYHOLDERS}?code=${code}`
