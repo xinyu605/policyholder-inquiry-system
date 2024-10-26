@@ -1,13 +1,23 @@
 'use client';
 
-import { ChangeEvent, FormEvent, useState, type FC } from 'react';
+import {
+  type ChangeEvent,
+  type FC,
+  type FormEvent,
+  useEffect,
+  useState,
+} from 'react';
 
 interface PolicyholderIdFilterProps {
+  keyword?: string;
   onSearch: (keyword: string) => void;
 }
 
-const PolicyholderIdFilter: FC<PolicyholderIdFilterProps> = ({ onSearch }) => {
-  const [keyword, setKeyword] = useState('');
+const PolicyholderIdFilter: FC<PolicyholderIdFilterProps> = ({
+  keyword: initKeyword,
+  onSearch,
+}) => {
+  const [keyword, setKeyword] = useState(initKeyword || '');
 
   const handleChangeKeyword = (event: ChangeEvent<HTMLInputElement>) => {
     setKeyword(event.target.value);
@@ -17,6 +27,11 @@ const PolicyholderIdFilter: FC<PolicyholderIdFilterProps> = ({ onSearch }) => {
     event.preventDefault();
     onSearch(keyword);
   };
+
+  useEffect(() => {
+    if (!initKeyword) return;
+    setKeyword(initKeyword);
+  }, [initKeyword]);
 
   return (
     <form

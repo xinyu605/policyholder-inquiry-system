@@ -41,9 +41,14 @@ const Policyholders: FC = () => {
   return (
     <div className="flex flex-col gap-4 p-6">
       <h2 className="pb-2 text-2xl">保戶關係查詢</h2>
-      <PolicyholderIdFilter onSearch={handleSearchClient} />
+      <PolicyholderIdFilter keyword={code} onSearch={handleSearchClient} />
       <h2 className="pt-2 text-2xl">關係圖</h2>
-      {policyholderRoot && <PolicyholderTree root={policyholderRoot} />}
+      {policyholderRoot && (
+        <PolicyholderTree
+          root={policyholderRoot}
+          onClick={handleSearchClient}
+        />
+      )}
     </div>
   );
 };
