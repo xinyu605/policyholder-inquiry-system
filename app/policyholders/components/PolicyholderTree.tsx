@@ -11,25 +11,40 @@ export interface TreeNodeType extends Omit<Policyholder, 'l' | 'r'> {
 interface TreeNodeProps {
   rootCode: string;
   node: TreeNodeType;
+  onClick: (code: string) => void;
 }
 
 const TreeNode: FC<TreeNodeProps> = ({
   rootCode,
   node: { code, introducer_code, name, left, right },
+  onClick,
 }) => {
   const isRoot = rootCode === code;
   const isChild = rootCode === introducer_code;
+
+  const handleClickCode = () => {
+    onClick(code);
+  };
 
   return (
     <div className="flex flex-col items-center mx-3">
       <div
         className={clsx(
-          'flex flex-col items-center',
+          'flex flex-col items-center gap-1',
           'w-52 border border-gray-400 rounded-lg p-2',
           { 'bg-yellow-200': isRoot, 'bg-sky-100': isChild }
         )}
       >
-        <p className="font-bold text-center">{code}</p>
+        <button
+          className={clsx(
+            'font-bold text-center text-blue-700',
+            'px-1 rounded',
+            'hover:bg-blue-300'
+          )}
+          onClick={handleClickCode}
+        >
+          {code}
+        </button>
         <p>{name}</p>
       </div>
       {(left || right) && (
@@ -50,7 +65,7 @@ const TreeNode: FC<TreeNodeProps> = ({
                   )}
                 />
               )}
-              <TreeNode rootCode={rootCode} node={left} />
+              <TreeNode rootCode={rootCode} node={left} onClick={onClick} />
             </div>
           )}
           {right && (
@@ -61,7 +76,7 @@ const TreeNode: FC<TreeNodeProps> = ({
                   'h-8 w-1/2 mr-auto'
                 )}
               />
-              <TreeNode rootCode={rootCode} node={right} />
+              <TreeNode rootCode={rootCode} node={right} onClick={onClick} />
             </div>
           )}
         </div>
@@ -72,12 +87,13 @@ const TreeNode: FC<TreeNodeProps> = ({
 
 interface PolicyholderTreeProps {
   root: TreeNodeType;
+  onClick: (code: string) => void;
 }
 
-const PolicyholderTree: FC<PolicyholderTreeProps> = ({ root }) => {
+const PolicyholderTree: FC<PolicyholderTreeProps> = ({ root, onClick }) => {
   return (
     <div className="flex p-4 overflow-auto">
-      <TreeNode node={root} rootCode={root.code} />
+      <TreeNode node={root} rootCode={root.code} onClick={onClick} />
     </div>
   );
 };
