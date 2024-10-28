@@ -42,15 +42,10 @@ const Policyholders: FC = () => {
 
   const [subTree, setSubTree] = useState<PolicyholderTreeNode | undefined>();
 
-  const handleSearchClient = useCallback((newKeyword: string) => {
+  const handleSearchClient = (target: 'self' | 'top') => (newCode: string) => {
     setSubTree(undefined);
-    setPolicyholderCode({ code: newKeyword, target: 'self' });
-  }, []);
-
-  const handleClickTop = useCallback((newCode: string) => {
-    setSubTree(undefined);
-    setPolicyholderCode(() => ({ code: newCode, target: 'top' }));
-  }, []);
+    setPolicyholderCode({ code: newCode, target: target });
+  };
 
   const handleSearchSubTree = useCallback(
     (subCode: string) => {
@@ -68,14 +63,14 @@ const Policyholders: FC = () => {
       <h2 className="pb-2 text-2xl">保戶關係查詢</h2>
       <PolicyholderIdFilter
         keyword={tree?.code}
-        onSearch={handleSearchClient}
+        onSearch={handleSearchClient('self')}
       />
       <h2 className="pt-2 text-2xl">關係圖</h2>
       {tree && (
         <PolicyholderTree
           root={tree}
           onClick={handleSearchSubTree}
-          onClickTop={handleClickTop}
+          onClickTop={handleSearchClient('top')}
         />
       )}
     </div>
