@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 
 import { Route } from '@/app/lib/routes';
 import request, { type QueryOptions } from '@/app/api/request';
+import { buildTree } from '@/app/policyholders/lib/utils';
 
 interface GetPolicyholdersPayload {
   code: string;
@@ -9,28 +10,35 @@ interface GetPolicyholdersPayload {
 
 export interface PolicyholderInfo {
   code: string;
-  introducer_code: string;
+  introducer_code: string | null;
   name: string;
-  registration_date: Date;
+  /** date string eg. 2022-10-23 */
+  registration_date: string;
+  left?: PolicyholderInfo[];
+  right?: PolicyholderInfo[];
 }
 
-export interface Policyholder extends PolicyholderInfo {
-  l: PolicyholderInfo[];
-  r: PolicyholderInfo[];
+export interface PolicyholderTreeNode
+  extends Omit<PolicyholderInfo, 'left' | 'right'> {
+  left?: PolicyholderTreeNode;
+  level: number;
+  right?: PolicyholderTreeNode;
 }
 
 export const useGetPolicyholders = (
   { code }: GetPolicyholdersPayload,
-  options?: QueryOptions<Policyholder>
+  options?: QueryOptions<PolicyholderTreeNode>
 ) => {
   return useQuery({
     ...options,
     queryKey: ['policyholders', code],
     queryFn: async () => {
-      const res = await request.get<Policyholder>(
+      const {
+        data: { policyholder },
+      } = await request.get<{ policyholder: PolicyholderInfo }>(
         `${Route.POLICYHOLDERS}?code=${code}`
       );
-      return res.data;
+      return buildTree(policyholder);
     },
   });
 };
@@ -39,16 +47,18 @@ type GetTopPolicyholdersPayload = GetPolicyholdersPayload;
 
 export const useGetTopPolicyholders = (
   { code }: GetTopPolicyholdersPayload,
-  options?: QueryOptions<Policyholder>
+  options?: QueryOptions<PolicyholderTreeNode>
 ) => {
   return useQuery({
     ...options,
     queryKey: ['topPolicyholders', code],
     queryFn: async () => {
-      const res = await request.get<Policyholder>(
+      const {
+        data: { policyholder },
+      } = await request.get<{ policyholder: PolicyholderInfo }>(
         `${Route.POLICYHOLDERS}/${code}/top`
       );
-      return res.data;
+      return buildTree(policyholder);
     },
   });
 };

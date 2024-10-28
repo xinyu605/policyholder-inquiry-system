@@ -41,7 +41,7 @@ const PolicyholderIdFilter: FC<PolicyholderIdFilterProps> = ({
       <span>保戶編號</span>
       <input
         className="border rounded flex-grow"
-        placeholder="測試編號：0001"
+        placeholder="測試編號：0000000001"
         value={keyword}
         onChange={handleChangeKeyword}
       />
