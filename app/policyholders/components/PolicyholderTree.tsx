@@ -23,8 +23,8 @@ const TreeNode: FC<TreeNodeProps> = ({
     onClick(code);
   };
 
-  const handleClickTop = () => {
-    onClickTop?.(rootCode);
+  const handleClickTop = (introCode: string) => () => {
+    onClickTop?.(introCode);
   };
 
   return (
@@ -49,13 +49,13 @@ const TreeNode: FC<TreeNodeProps> = ({
           </button>
           <p>{name}</p>
         </div>
-        {isRoot && (
+        {isRoot && introducer_code && (
           <button
             className={clsx(
               'p-2 bg-slate-100 rounded text-center',
               'hover:bg-slate-200'
             )}
-            onClick={handleClickTop}
+            onClick={handleClickTop(introducer_code)}
           >
             上一階
           </button>

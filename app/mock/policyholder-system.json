@@ -20,7 +20,7 @@
           "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000001\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-01-01\",\n    \"introducer_code\": null,\n    \"left\": [\n      {\n        \"code\": \"0000000002\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-01-11\",\n        \"introducer_code\": \"0000000001\",\n        \"left\": [\n          {\n            \"code\": \"0000000004\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-01-17\",\n            \"introducer_code\": \"0000000001\",\n            \"left\": [\n              {\n                \"code\": \"0000000008\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-02-05\",\n                \"introducer_code\": \"0000000004\",\n                \"left\": [\n                  {\n                    \"code\": \"0000000016\",\n                    \"name\": \"{{firstName}} {{lastName}}\",\n                    \"registration_date\": \"2023-03-20\",\n                    \"introducer_code\": \"0000000004\"\n                  }\n                ]\n              }\n            ],\n            \"right\": [\n              {\n                \"code\": \"0000000009\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-02-10\",\n                \"introducer_code\": \"0000000004\",\n                \"left\": [\n                  {\n                    \"code\": \"0000000017\",\n                    \"name\": \"{{firstName}} {{lastName}}\",\n                    \"registration_date\": \"2023-04-05\",\n                    \"introducer_code\": \"0000000004\",\n                    \"left\": [\n                      {\n                        \"code\": \"0000000019\",\n                        \"name\": \"{{firstName}} {{lastName}}\",\n                        \"registration_date\": \"2023-05-02\",\n                        \"introducer_code\": \"0000000004\"\n                      }\n                    ],\n                    \"right\": [\n                      {\n                        \"code\": \"0000000020\",\n                        \"name\": \"{{firstName}} {{lastName}}\",\n                        \"registration_date\": \"2023-05-16\",\n                        \"introducer_code\": \"0000000004\"\n                      }\n                    ]\n                  }\n                ],\n                \"right\": [\n                  {\n                    \"code\": \"0000000018\",\n                    \"name\": \"{{firstName}} {{lastName}}\",\n                    \"registration_date\": \"2023-04-18\",\n                    \"introducer_code\": \"0000000001\"\n                  }\n                ]\n              }\n            ]\n          }\n        ],\n        \"right\": [\n          {\n            \"code\": \"0000000005\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-01-18\",\n            \"introducer_code\": \"0000000001\",\n            \"left\": [\n              {\n                \"code\": \"0000000010\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-02-12\",\n                \"introducer_code\": \"0000000005\"\n              }\n            ],\n            \"right\": [\n              {\n                \"code\": \"0000000011\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-02-17\",\n                \"introducer_code\": \"0000000005\"\n              }\n            ]\n          }\n        ]\n      }\n    ],\n    \"right\": [\n      {\n        \"code\": \"0000000003\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-01-15\",\n        \"introducer_code\": \"0000000001\",\n        \"left\": [\n          {\n            \"code\": \"0000000006\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-01-19\",\n            \"introducer_code\": \"0000000003\",\n            \"left\": [\n              {\n                \"code\": \"0000000012\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-02-19\",\n                \"introducer_code\": \"0000000001\"\n              }\n            ],\n            \"right\": [\n              {\n                \"code\": \"0000000013\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-02-25\",\n                \"introducer_code\": \"0000000003\"\n              }\n            ]\n          }\n        ],\n        \"right\": [\n          {\n            \"code\": \"0000000007\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-01-19\",\n            \"introducer_code\": \"0000000003\",\n            \"left\": [\n              {\n                \"code\": \"0000000014\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-03-05\",\n                \"introducer_code\": \"0000000003\"\n              }\n            ],\n            \"right\": [\n              {\n                \"code\": \"0000000015\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-03-06\",\n                \"introducer_code\": \"0000000003\"\n              }\n            ]\n          }\n        ]\n      }\n    ]\n  }\n}\n",
           "latency": 0,
           "statusCode": 200,
-          "label": "query 0001",
+          "label": "code - 0000000001",
           "headers": [],
           "bodyType": "INLINE",
           "filePath": "",
@@ -41,6 +41,519 @@
           "default": true,
           "crudKey": "id",
           "callbacks": []
+        },
+        {
+          "uuid": "bc394e7b-e334-4f59-861d-65309f1de3b2",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000002\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-01-11\",\n    \"introducer_code\": \"0000000001\",\n    \"left\": [\n      {\n        \"code\": \"0000000004\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-01-17\",\n        \"introducer_code\": \"0000000001\",\n        \"left\": [\n          {\n            \"code\": \"0000000008\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-02-05\",\n            \"introducer_code\": \"0000000004\",\n            \"left\": [\n              {\n                \"code\": \"0000000016\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-03-20\",\n                \"introducer_code\": \"0000000004\"\n              }\n            ]\n          }\n        ],\n        \"right\": [\n          {\n            \"code\": \"0000000009\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-02-10\",\n            \"introducer_code\": \"0000000004\",\n            \"left\": [\n              {\n                \"code\": \"0000000017\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-04-05\",\n                \"introducer_code\": \"0000000004\",\n                \"left\": [\n                  {\n                    \"code\": \"0000000019\",\n                    \"name\": \"{{firstName}} {{lastName}}\",\n                    \"registration_date\": \"2023-05-02\",\n                    \"introducer_code\": \"0000000004\"\n                  }\n                ],\n                \"right\": [\n                  {\n                    \"code\": \"0000000020\",\n                    \"name\": \"{{firstName}} {{lastName}}\",\n                    \"registration_date\": \"2023-05-16\",\n                    \"introducer_code\": \"0000000004\"\n                  }\n                ]\n              }\n            ],\n            \"right\": [\n              {\n                \"code\": \"0000000018\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-04-18\",\n                \"introducer_code\": \"0000000001\"\n              }\n            ]\n          }\n        ]\n      }\n    ],\n    \"right\": [\n      {\n        \"code\": \"0000000005\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-01-18\",\n        \"introducer_code\": \"0000000001\",\n        \"left\": [\n          {\n            \"code\": \"0000000010\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-02-12\",\n            \"introducer_code\": \"0000000005\"\n          }\n        ],\n        \"right\": [\n          {\n            \"code\": \"0000000011\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-02-17\",\n            \"introducer_code\": \"0000000005\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "code - 0000000002",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "code",
+              "value": "0000000002",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "24d0acf8-015f-4ddd-ac83-d8217faee3e5",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000003\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-01-15\",\n    \"introducer_code\": \"0000000001\",\n    \"left\": [\n      {\n        \"code\": \"0000000006\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-01-19\",\n        \"introducer_code\": \"0000000003\",\n        \"left\": [\n          {\n            \"code\": \"0000000012\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-02-19\",\n            \"introducer_code\": \"0000000001\"\n          }\n        ],\n        \"right\": [\n          {\n            \"code\": \"0000000013\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-02-25\",\n            \"introducer_code\": \"0000000003\"\n          }\n        ]\n      }\n    ],\n    \"right\": [\n      {\n        \"code\": \"0000000007\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-01-19\",\n        \"introducer_code\": \"0000000003\",\n        \"left\": [\n          {\n            \"code\": \"0000000014\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-03-05\",\n            \"introducer_code\": \"0000000003\"\n          }\n        ],\n        \"right\": [\n          {\n            \"code\": \"0000000015\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-03-06\",\n            \"introducer_code\": \"0000000003\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "code - 0000000003",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "code",
+              "value": "0000000003",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "a1cb07d0-cf49-4bb8-8300-01d06433dc78",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000004\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-01-17\",\n    \"introducer_code\": \"0000000001\",\n    \"left\": [\n      {\n        \"code\": \"0000000008\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-02-05\",\n        \"introducer_code\": \"0000000004\",\n        \"left\": [\n          {\n            \"code\": \"0000000016\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-03-20\",\n            \"introducer_code\": \"0000000004\"\n          }\n        ]\n      }\n    ],\n    \"right\": [\n      {\n        \"code\": \"0000000009\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-02-10\",\n        \"introducer_code\": \"0000000004\",\n        \"left\": [\n          {\n            \"code\": \"0000000017\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-04-05\",\n            \"introducer_code\": \"0000000004\",\n            \"left\": [\n              {\n                \"code\": \"0000000019\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-05-02\",\n                \"introducer_code\": \"0000000004\"\n              }\n            ],\n            \"right\": [\n              {\n                \"code\": \"0000000020\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-05-16\",\n                \"introducer_code\": \"0000000004\"\n              }\n            ]\n          }\n        ],\n        \"right\": [\n          {\n            \"code\": \"0000000018\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-04-18\",\n            \"introducer_code\": \"0000000001\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "code - 0000000004",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "code",
+              "value": "0000000004",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "913cef9d-3b4a-4818-90b7-a8dce7329b17",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000005\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-01-18\",\n    \"introducer_code\": \"0000000001\",\n    \"left\": [\n      {\n        \"code\": \"0000000010\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-02-12\",\n        \"introducer_code\": \"0000000005\"\n      }\n    ],\n    \"right\": [\n      {\n        \"code\": \"0000000011\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-02-17\",\n        \"introducer_code\": \"0000000005\"\n      }\n    ]\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "code - 0000000005",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "code",
+              "value": "0000000005",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "c948a7b7-fcfa-4ebb-be56-9a28e356b085",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000006\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-01-19\",\n    \"introducer_code\": \"0000000003\",\n    \"left\": [\n      {\n        \"code\": \"0000000012\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-02-19\",\n        \"introducer_code\": \"0000000001\"\n      }\n    ],\n    \"right\": [\n      {\n        \"code\": \"0000000013\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-02-25\",\n        \"introducer_code\": \"0000000003\"\n      }\n    ]\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "code - 0000000006",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "code",
+              "value": "0000000006",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "c59c76c9-4c8b-4fc9-ac9c-a06024c141db",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000007\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-01-19\",\n    \"introducer_code\": \"0000000003\",\n    \"left\": [\n      {\n        \"code\": \"0000000014\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-03-05\",\n        \"introducer_code\": \"0000000003\"\n      }\n    ],\n    \"right\": [\n      {\n        \"code\": \"0000000015\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-03-06\",\n        \"introducer_code\": \"0000000003\"\n      }\n    ]\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "code - 0000000007",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "code",
+              "value": "0000000007",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "f494f82c-345f-4265-bf22-ffd61abb5c7b",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000008\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-02-05\",\n    \"introducer_code\": \"0000000004\",\n    \"left\": [\n      {\n        \"code\": \"0000000016\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-03-20\",\n        \"introducer_code\": \"0000000004\"\n      }\n    ]\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "code - 0000000008",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "code",
+              "value": "0000000008",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "5ad6b9e3-09e2-49aa-bbb1-d7f5f578d1b5",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000009\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-02-10\",\n    \"introducer_code\": \"0000000004\",\n    \"left\": [\n      {\n        \"code\": \"0000000017\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-04-05\",\n        \"introducer_code\": \"0000000004\",\n        \"left\": [\n          {\n            \"code\": \"0000000019\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-05-02\",\n            \"introducer_code\": \"0000000004\"\n          }\n        ],\n        \"right\": [\n          {\n            \"code\": \"0000000020\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-05-16\",\n            \"introducer_code\": \"0000000004\"\n          }\n        ]\n      }\n    ],\n    \"right\": [\n      {\n        \"code\": \"0000000018\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-04-18\",\n        \"introducer_code\": \"0000000001\"\n      }\n    ]\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "code - 0000000009",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "code",
+              "value": "0000000009",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "b27d792b-b2f7-4f82-93a5-6946793f04ab",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000010\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-02-12\",\n    \"introducer_code\": \"0000000005\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "code - 0000000010",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "code",
+              "value": "0000000010",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "fe7ce412-d7db-42af-a77f-7ac0e7de2573",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000011\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-02-17\",\n    \"introducer_code\": \"0000000005\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "code - 0000000011",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "code",
+              "value": "0000000011",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "2ab25b29-4bdf-4c17-9c19-f8b70c247aa7",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000012\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-02-19\",\n    \"introducer_code\": \"0000000001\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "code - 0000000012",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "code",
+              "value": "0000000012",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "e7456032-7505-423b-a60b-c03225304898",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000013\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-02-25\",\n    \"introducer_code\": \"0000000003\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "code - 0000000013",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "code",
+              "value": "0000000013",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "9bdce2d2-68d2-414f-a423-fa460097f63d",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000014\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-03-05\",\n    \"introducer_code\": \"0000000003\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "code - 0000000014",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "code",
+              "value": "0000000014",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "62ce6679-732f-4859-b6e5-006422411c57",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000015\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-03-06\",\n    \"introducer_code\": \"0000000003\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "code - 0000000015",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "code",
+              "value": "0000000015",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "fd2178fc-210c-4402-bff9-f9b8e0520cbc",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000016\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-03-20\",\n    \"introducer_code\": \"0000000004\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "code - 0000000016",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "code",
+              "value": "0000000016",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "2161c8e2-cf1d-41cc-9dc1-aef0d534346f",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000017\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-04-05\",\n    \"introducer_code\": \"0000000004\",\n    \"left\": [\n      {\n        \"code\": \"0000000019\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-05-02\",\n        \"introducer_code\": \"0000000004\"\n      }\n    ],\n    \"right\": [\n      {\n        \"code\": \"0000000020\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-05-16\",\n        \"introducer_code\": \"0000000004\"\n      }\n    ]\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "code - 0000000017",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "code",
+              "value": "0000000017",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "9fe0577d-4c1e-4aac-bef5-bb042da486ac",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000018\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-04-18\",\n    \"introducer_code\": \"0000000001\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "code - 0000000018",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "code",
+              "value": "0000000018",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "8628bb4d-8a55-4565-a44e-64cc27307d06",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000019\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-05-02\",\n    \"introducer_code\": \"0000000004\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "code - 0000000019",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "code",
+              "value": "0000000019",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "752e32e4-4143-42fe-8bf9-3cd09e072e29",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000020\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-05-16\",\n    \"introducer_code\": \"0000000004\"\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "code - 0000000020",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "query",
+              "modifier": "code",
+              "value": "0000000020",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
         }
       ],
       "responseMode": null
@@ -57,7 +570,7 @@
           "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000001\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-01-01\",\n    \"introducer_code\": null,\n    \"left\": [\n      {\n        \"code\": \"0000000002\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-01-11\",\n        \"introducer_code\": \"0000000001\",\n        \"left\": [\n          {\n            \"code\": \"0000000004\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-01-17\",\n            \"introducer_code\": \"0000000001\",\n            \"left\": [\n              {\n                \"code\": \"0000000008\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-02-05\",\n                \"introducer_code\": \"0000000004\",\n                \"left\": [\n                  {\n                    \"code\": \"0000000016\",\n                    \"name\": \"{{firstName}} {{lastName}}\",\n                    \"registration_date\": \"2023-03-20\",\n                    \"introducer_code\": \"0000000004\"\n                  }\n                ]\n              }\n            ],\n            \"right\": [\n              {\n                \"code\": \"0000000009\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-02-10\",\n                \"introducer_code\": \"0000000004\",\n                \"left\": [\n                  {\n                    \"code\": \"0000000017\",\n                    \"name\": \"{{firstName}} {{lastName}}\",\n                    \"registration_date\": \"2023-04-05\",\n                    \"introducer_code\": \"0000000004\",\n                    \"left\": [\n                      {\n                        \"code\": \"0000000019\",\n                        \"name\": \"{{firstName}} {{lastName}}\",\n                        \"registration_date\": \"2023-05-02\",\n                        \"introducer_code\": \"0000000004\"\n                      }\n                    ],\n                    \"right\": [\n                      {\n                        \"code\": \"0000000020\",\n                        \"name\": \"{{firstName}} {{lastName}}\",\n                        \"registration_date\": \"2023-05-16\",\n                        \"introducer_code\": \"0000000004\"\n                      }\n                    ]\n                  }\n                ],\n                \"right\": [\n                  {\n                    \"code\": \"0000000018\",\n                    \"name\": \"{{firstName}} {{lastName}}\",\n                    \"registration_date\": \"2023-04-18\",\n                    \"introducer_code\": \"0000000001\"\n                  }\n                ]\n              }\n            ]\n          }\n        ],\n        \"right\": [\n          {\n            \"code\": \"0000000005\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-01-18\",\n            \"introducer_code\": \"0000000001\",\n            \"left\": [\n              {\n                \"code\": \"0000000010\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-02-12\",\n                \"introducer_code\": \"0000000005\"\n              }\n            ],\n            \"right\": [\n              {\n                \"code\": \"0000000011\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-02-17\",\n                \"introducer_code\": \"0000000005\"\n              }\n            ]\n          }\n        ]\n      }\n    ],\n    \"right\": [\n      {\n        \"code\": \"0000000003\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-01-15\",\n        \"introducer_code\": \"0000000001\",\n        \"left\": [\n          {\n            \"code\": \"0000000006\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-01-19\",\n            \"introducer_code\": \"0000000003\",\n            \"left\": [\n              {\n                \"code\": \"0000000012\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-02-19\",\n                \"introducer_code\": \"0000000001\"\n              }\n            ],\n            \"right\": [\n              {\n                \"code\": \"0000000013\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-02-25\",\n                \"introducer_code\": \"0000000003\"\n              }\n            ]\n          }\n        ],\n        \"right\": [\n          {\n            \"code\": \"0000000007\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-01-19\",\n            \"introducer_code\": \"0000000003\",\n            \"left\": [\n              {\n                \"code\": \"0000000014\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-03-05\",\n                \"introducer_code\": \"0000000003\"\n              }\n            ],\n            \"right\": [\n              {\n                \"code\": \"0000000015\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-03-06\",\n                \"introducer_code\": \"0000000003\"\n              }\n            ]\n          }\n        ]\n      }\n    ]\n  }\n}\n",
           "latency": 0,
           "statusCode": 200,
-          "label": "query 0001 top",
+          "label": "introducer_code - 0000000001",
           "headers": [],
           "bodyType": "INLINE",
           "filePath": "",
@@ -67,7 +580,7 @@
             {
               "target": "params",
               "modifier": "code",
-              "value": "0001",
+              "value": "0000000001",
               "invert": false,
               "operator": "equals"
             }
@@ -76,6 +589,87 @@
           "disableTemplating": false,
           "fallbackTo404": false,
           "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "636924d0-b70f-4fce-a414-9c477944061c",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000003\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-01-15\",\n    \"introducer_code\": \"0000000001\",\n    \"left\": [\n      {\n        \"code\": \"0000000006\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-01-19\",\n        \"introducer_code\": \"0000000003\",\n        \"left\": [\n          {\n            \"code\": \"0000000012\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-02-19\",\n            \"introducer_code\": \"0000000001\"\n          }\n        ],\n        \"right\": [\n          {\n            \"code\": \"0000000013\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-02-25\",\n            \"introducer_code\": \"0000000003\"\n          }\n        ]\n      }\n    ],\n    \"right\": [\n      {\n        \"code\": \"0000000007\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-01-19\",\n        \"introducer_code\": \"0000000003\",\n        \"left\": [\n          {\n            \"code\": \"0000000014\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-03-05\",\n            \"introducer_code\": \"0000000003\"\n          }\n        ],\n        \"right\": [\n          {\n            \"code\": \"0000000015\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-03-06\",\n            \"introducer_code\": \"0000000003\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "introducer_code - 0000000003",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "code",
+              "value": "0000000003",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "b0353e10-03e5-4316-9c24-265b8ff475de",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000004\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-01-17\",\n    \"introducer_code\": \"0000000001\",\n    \"left\": [\n      {\n        \"code\": \"0000000008\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-02-05\",\n        \"introducer_code\": \"0000000004\",\n        \"left\": [\n          {\n            \"code\": \"0000000016\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-03-20\",\n            \"introducer_code\": \"0000000004\"\n          }\n        ]\n      }\n    ],\n    \"right\": [\n      {\n        \"code\": \"0000000009\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-02-10\",\n        \"introducer_code\": \"0000000004\",\n        \"left\": [\n          {\n            \"code\": \"0000000017\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-04-05\",\n            \"introducer_code\": \"0000000004\",\n            \"left\": [\n              {\n                \"code\": \"0000000019\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-05-02\",\n                \"introducer_code\": \"0000000004\"\n              }\n            ],\n            \"right\": [\n              {\n                \"code\": \"0000000020\",\n                \"name\": \"{{firstName}} {{lastName}}\",\n                \"registration_date\": \"2023-05-16\",\n                \"introducer_code\": \"0000000004\"\n              }\n            ]\n          }\n        ],\n        \"right\": [\n          {\n            \"code\": \"0000000018\",\n            \"name\": \"{{firstName}} {{lastName}}\",\n            \"registration_date\": \"2023-04-18\",\n            \"introducer_code\": \"0000000001\"\n          }\n        ]\n      }\n    ]\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "introducer_code - 0000000004",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "code",
+              "value": "0000000004",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "8b440632-4e00-4064-a4ad-be305e150760",
+          "body": "{\n  \"policyholder\": {\n    \"code\": \"0000000005\",\n    \"name\": \"{{firstName}} {{lastName}}\",\n    \"registration_date\": \"2023-01-18\",\n    \"introducer_code\": \"0000000001\",\n    \"left\": [\n      {\n        \"code\": \"0000000010\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-02-12\",\n        \"introducer_code\": \"0000000005\"\n      }\n    ],\n    \"right\": [\n      {\n        \"code\": \"0000000011\",\n        \"name\": \"{{firstName}} {{lastName}}\",\n        \"registration_date\": \"2023-02-17\",\n        \"introducer_code\": \"0000000005\"\n      }\n    ]\n  }\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "introducer_code - 0000000005",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [
+            {
+              "target": "params",
+              "modifier": "code",
+              "value": "0000000005",
+              "invert": false,
+              "operator": "equals"
+            }
+          ],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
           "crudKey": "id",
           "callbacks": []
         }
