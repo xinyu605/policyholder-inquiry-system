@@ -16,3 +16,17 @@ export const buildTree = (
       right && right.length > 0 ? buildTree(right[0], level + 1) : undefined,
   };
 };
+
+export const findSubTree = (
+  tree: PolicyholderTreeNode | undefined,
+  code: string
+): PolicyholderTreeNode | undefined => {
+  if (!tree) return undefined;
+  if (tree?.code === code) return tree;
+
+  const leftTree = findSubTree(tree?.left, code);
+  if (leftTree) return leftTree;
+
+  const rightTree = findSubTree(tree?.right, code);
+  return rightTree;
+};
