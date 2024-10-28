@@ -1,6 +1,6 @@
 'use client';
 
-import { useCallback, useMemo, useState, type FC } from 'react';
+import { useCallback, useState, type FC } from 'react';
 
 import {
   PolicyholderTreeNode,
@@ -13,20 +13,17 @@ import PolicyholderTree from '@/app/policyholders/components/PolicyholderTree';
 import { findSubTree } from '@/app/policyholders/lib/utils';
 
 const usePolicyHoldersData = (code: string, target: 'self' | 'top') => {
-  const { data: policyholdersData } = useGetPolicyholders(
+  const policyholdersRes = useGetPolicyholders(
     { code },
     { enabled: target === 'self' && !!code }
   );
 
-  const { data: topPolicyholdersData } = useGetTopPolicyholders(
+  const topPolicyholdersRes = useGetTopPolicyholders(
     { code },
     { enabled: target === 'top' && !!code }
   );
 
-  return useMemo(
-    () => (target === 'self' ? policyholdersData : topPolicyholdersData),
-    [policyholdersData, target, topPolicyholdersData]
-  );
+  return target === 'self' ? policyholdersRes : topPolicyholdersRes;
 };
 
 const Policyholders: FC = () => {
@@ -35,7 +32,7 @@ const Policyholders: FC = () => {
     code: string;
   }>({ code: '', target: 'self' });
 
-  const policyholdersData = usePolicyHoldersData(
+  const { data: policyholdersData, error } = usePolicyHoldersData(
     policyholderCode.code,
     policyholderCode.target
   );
@@ -66,6 +63,7 @@ const Policyholders: FC = () => {
         onSearch={handleSearchClient('self')}
       />
       <h2 className="pt-2 text-2xl">關係圖</h2>
+      {error && <span>Error: {error.message}</span>}
       {tree && (
         <PolicyholderTree
           root={tree}
