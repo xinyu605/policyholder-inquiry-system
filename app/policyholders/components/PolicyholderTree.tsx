@@ -2,22 +2,24 @@ import { type FC } from 'react';
 import clsx from 'clsx';
 
 import { type PolicyholderTreeNode } from '@/app/api/route';
+import { MAX_SUBTREE_LEVEL } from '@/app/policyholders/lib/utils';
 
 interface TreeNodeProps {
-  rootCode: string;
+  root: Pick<PolicyholderTreeNode, 'code' | 'level'>;
   node: PolicyholderTreeNode;
   onClick: (code: string) => void;
   onClickTop?: (code: string) => void;
 }
 
 const TreeNode: FC<TreeNodeProps> = ({
-  rootCode,
-  node: { code, introducer_code, name, left, right },
+  root,
+  node: { code, introducer_code, name, left, level, right },
   onClick,
   onClickTop,
 }) => {
-  const isRoot = rootCode === code;
-  const isChild = rootCode === introducer_code;
+  const isRoot = root.code === code;
+  const isChild = root.code === introducer_code;
+  const isValidLevel = level - root.level < MAX_SUBTREE_LEVEL;
 
   const handleClickCode = () => {
     onClick(code);
@@ -61,7 +63,7 @@ const TreeNode: FC<TreeNodeProps> = ({
           </button>
         )}
       </div>
-      {(left || right) && (
+      {isValidLevel && (left || right) && (
         <div
           className={clsx(
             'flex justify-center mt-4 relative',
@@ -79,7 +81,7 @@ const TreeNode: FC<TreeNodeProps> = ({
                   )}
                 />
               )}
-              <TreeNode rootCode={rootCode} node={left} onClick={onClick} />
+              <TreeNode root={root} node={left} onClick={onClick} />
             </div>
           )}
           {right && (
@@ -90,7 +92,7 @@ const TreeNode: FC<TreeNodeProps> = ({
                   'h-8 w-1/2 mr-auto'
                 )}
               />
-              <TreeNode rootCode={rootCode} node={right} onClick={onClick} />
+              <TreeNode root={root} node={right} onClick={onClick} />
             </div>
           )}
         </div>
@@ -113,7 +115,7 @@ const PolicyholderTree: FC<PolicyholderTreeProps> = ({
     <div className="flex p-4 overflow-auto">
       <TreeNode
         node={root}
-        rootCode={root.code}
+        root={root}
         onClick={onClick}
         onClickTop={onClickTop}
       />
