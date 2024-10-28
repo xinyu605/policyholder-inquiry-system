@@ -1,16 +1,11 @@
 import { type FC } from 'react';
 import clsx from 'clsx';
 
-import { type Policyholder } from '@/app/api/route';
-
-export interface TreeNodeType extends Omit<Policyholder, 'l' | 'r'> {
-  left?: TreeNodeType;
-  right?: TreeNodeType;
-}
+import { type PolicyholderTreeNode } from '@/app/api/route';
 
 interface TreeNodeProps {
   rootCode: string;
-  node: TreeNodeType;
+  node: PolicyholderTreeNode;
   onClick: (code: string) => void;
   onClickTop?: (code: string) => void;
 }
@@ -106,7 +101,7 @@ const TreeNode: FC<TreeNodeProps> = ({
 
 interface PolicyholderTreeProps
   extends Pick<TreeNodeProps, 'onClick' | 'onClickTop'> {
-  root: TreeNodeType;
+  root: PolicyholderTreeNode;
 }
 
 const PolicyholderTree: FC<PolicyholderTreeProps> = ({

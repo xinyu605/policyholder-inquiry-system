@@ -1,9 +1,8 @@
 'use client';
 
-import { useCallback, useMemo, useState, type FC } from 'react';
+import { useCallback, useState, type FC } from 'react';
 
 import { useGetPolicyholders, useGetTopPolicyholders } from '@/app/api/route';
-import { getPolicyholdersRoot } from '@/app/policyholders/lib/utils';
 
 import PolicyholderIdFilter from '@/app/policyholders/components/PolicyholderIdFilter';
 import PolicyholderTree from '@/app/policyholders/components/PolicyholderTree';
@@ -24,15 +23,7 @@ const Policyholders: FC = () => {
     { enabled: policyholderCode.target === 'top' && !!policyholderCode.code }
   );
 
-  const policyholderRoot = useMemo(() => {
-    if (topPolicyholdersData) {
-      return getPolicyholdersRoot(topPolicyholdersData);
-    }
-    if (policyholdersData) {
-      return getPolicyholdersRoot(policyholdersData);
-    }
-    return null;
-  }, [policyholdersData, topPolicyholdersData]);
+  const policyholderRoot = topPolicyholdersData || policyholdersData || null;
 
   const handleSearchClient = useCallback((newKeyword: string) => {
     setPolicyholderCode({ code: newKeyword, target: 'self' });
