@@ -33,8 +33,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Demo
 
-- Feature1: Search policyholders via input or tree node button
-  ![search](https://github.com/user-attachments/assets/dc2195ca-5f7a-4e94-9145-888c156454c2)
-
-- Feature2: Search top policyholders via top button
-  ![top](https://github.com/user-attachments/assets/56abc3f8-7d8c-4fb1-b0a2-21073d5959c2)
+- Search policyholders via input or tree node button
+- Search top policyholders via top button
+  
+  https://github.com/user-attachments/assets/0c8b3631-fe6a-4bfd-9015-860633d9429c
