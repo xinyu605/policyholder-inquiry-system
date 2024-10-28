@@ -3,6 +3,8 @@ import {
   type PolicyholderTreeNode,
 } from '@/app/api/route';
 
+export const MAX_SUBTREE_LEVEL = 3;
+
 export const buildTree = (
   policyholder: PolicyholderInfo,
   level = 0
