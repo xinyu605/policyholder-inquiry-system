@@ -23,7 +23,7 @@ const Policyholders: FC = () => {
       {policyholderTree && (
         <PolicyholderTree
           root={policyholderTree}
-          onClick={handleSearchSubtree}
+          onClickCode={handleSearchSubtree}
           onClickTop={handleSearchTree('top')}
         />
       )}
