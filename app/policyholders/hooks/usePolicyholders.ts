@@ -6,35 +6,36 @@ import {
 } from '@/app/policyholders/api/route';
 import { findSubtree } from '@/app/policyholders/lib/utils';
 import {
+  SearchTarget,
   type PolicyholderTreeNode,
   type SearchParams,
 } from '@/app/policyholders/lib/type';
 
-const usePolicyHoldersData = (code: string, target: 'self' | 'top') => {
+const usePolicyHoldersData = (code: string, target: SearchTarget) => {
   const policyholdersRes = useGetPolicyholders(
     { code },
-    { enabled: target === 'self' && !!code }
+    { enabled: target === SearchTarget.SELF && !!code }
   );
 
   const topPolicyholdersRes = useGetTopPolicyholders(
     { code },
-    { enabled: target === 'top' && !!code }
+    { enabled: target === SearchTarget.UPPER && !!code }
   );
 
-  return target === 'self' ? policyholdersRes : topPolicyholdersRes;
+  return target === SearchTarget.SELF ? policyholdersRes : topPolicyholdersRes;
 };
 
 interface UsePolicyholdersRes {
   error: Error | null;
   root: PolicyholderTreeNode | undefined;
   handleSearchSubtree: (subCode: string) => void;
-  handleSearchTree: (target: 'self' | 'top') => (newCode: string) => void;
+  handleSearchTree: (target: SearchTarget) => (newCode: string) => void;
 }
 
 const usePolicyholders = (): UsePolicyholdersRes => {
   const [searchParams, setSearchParams] = useState<SearchParams>({
     code: '',
-    target: 'self',
+    target: SearchTarget.SELF,
   });
   const [subtree, setSubtree] = useState<PolicyholderTreeNode>();
 
@@ -43,7 +44,7 @@ const usePolicyholders = (): UsePolicyholdersRes => {
     searchParams.target
   );
 
-  const handleSearchTree = (target: 'self' | 'top') => (newCode: string) => {
+  const handleSearchTree = (target: SearchTarget) => (newCode: string) => {
     setSubtree(undefined);
     setSearchParams({ code: newCode, target: target });
   };

@@ -2,6 +2,7 @@
 
 import { type FC } from 'react';
 
+import { SearchTarget } from '@/app/policyholders/lib/type';
 import usePolicyholders from '@/app/policyholders/hooks/usePolicyholders';
 
 import SearchForm from '@/app/policyholders/components/Policyholder.SearchForm';
@@ -14,14 +15,17 @@ const Policyholders: FC = () => {
   return (
     <div className="flex flex-col gap-4 p-6">
       <h2 className="pb-2 text-2xl">保戶關係查詢</h2>
-      <SearchForm value={root?.code} onSearch={handleSearchTree('self')} />
+      <SearchForm
+        value={root?.code}
+        onSearch={handleSearchTree(SearchTarget.SELF)}
+      />
       <h2 className="pt-2 text-2xl">關係圖</h2>
       {error && <span>Error: {error.message}</span>}
       {root && (
         <Tree
           root={root}
           onClickCode={handleSearchSubtree}
-          onClickTop={handleSearchTree('top')}
+          onClickTop={handleSearchTree(SearchTarget.UPPER)}
         />
       )}
     </div>

@@ -1,4 +1,5 @@
 /** API Response */
+
 export interface PolicyholderInfo {
   code: string;
   introducer_code: string | null;
@@ -19,13 +20,18 @@ export interface PolicyholderTreeNode
 
 /** Components and Custom hooks */
 
+export enum SearchTarget {
+  SELF = 'SELF',
+  UPPER = 'UPPER',
+}
+
 export interface SearchFormProps {
   value?: string;
   onSearch: (keyword: string) => void;
 }
 
 export interface SearchParams {
-  target: 'top' | 'self';
+  target: SearchTarget;
   code: string;
 }
 
