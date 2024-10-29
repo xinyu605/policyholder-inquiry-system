@@ -1,15 +1,11 @@
 import { type FC } from 'react';
 import clsx from 'clsx';
 
-import { type PolicyholderTreeNode } from '@/app/api/route';
-import usePolicyholderTree from '@/app/policyholders/hooks/usePolicyholderTree';
-
-interface TreeNodeProps {
-  root: Pick<PolicyholderTreeNode, 'code' | 'level'>;
-  node: PolicyholderTreeNode;
-  onClickCode: (code: string) => void;
-  onClickTop?: (code: string) => void;
-}
+import useTreeNode from '@/app/policyholders/hooks/useTreeNode';
+import {
+  type TreeNodeProps,
+  type TreeProps,
+} from '@/app/policyholders/lib/type';
 
 const TreeNode: FC<TreeNodeProps> = ({
   root,
@@ -19,7 +15,7 @@ const TreeNode: FC<TreeNodeProps> = ({
 }) => {
   const { code, name, left, right } = node;
   const { isChild, isRoot, showSubtree, handleClickCode, handleClickTop } =
-    usePolicyholderTree({
+    useTreeNode({
       node,
       root,
       onClickCode,
@@ -98,16 +94,7 @@ const TreeNode: FC<TreeNodeProps> = ({
   );
 };
 
-interface PolicyholderTreeProps
-  extends Pick<TreeNodeProps, 'onClickCode' | 'onClickTop'> {
-  root: PolicyholderTreeNode;
-}
-
-const PolicyholderTree: FC<PolicyholderTreeProps> = ({
-  root,
-  onClickCode,
-  onClickTop,
-}) => {
+const Tree: FC<TreeProps> = ({ root, onClickCode, onClickTop }) => {
   return (
     <div className="flex p-4 overflow-auto">
       <TreeNode
@@ -120,4 +107,4 @@ const PolicyholderTree: FC<PolicyholderTreeProps> = ({
   );
 };
 
-export default PolicyholderTree;
+export default Tree;
