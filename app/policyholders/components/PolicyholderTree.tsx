@@ -13,12 +13,12 @@ interface TreeNodeProps {
 
 const TreeNode: FC<TreeNodeProps> = ({
   root,
-  node: { code, introducer_code, name, left, level, right },
+  node: { code, introducerCode, name, left, level, right },
   onClick,
   onClickTop,
 }) => {
   const isRoot = root.code === code;
-  const isChild = root.code === introducer_code;
+  const isChild = root.code === introducerCode;
   const isValidLevel = level - root.level < MAX_SUBTREE_LEVEL;
 
   const handleClickCode = () => {
@@ -51,13 +51,13 @@ const TreeNode: FC<TreeNodeProps> = ({
           </button>
           <p>{name}</p>
         </div>
-        {isRoot && introducer_code && (
+        {isRoot && introducerCode && (
           <button
             className={clsx(
               'p-2 bg-slate-100 rounded text-center',
               'hover:bg-slate-200'
             )}
-            onClick={handleClickTop(introducer_code)}
+            onClick={handleClickTop(introducerCode)}
           >
             上一階
           </button>

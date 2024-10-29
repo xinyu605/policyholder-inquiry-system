@@ -19,7 +19,8 @@ export interface PolicyholderInfo {
 }
 
 export interface PolicyholderTreeNode
-  extends Omit<PolicyholderInfo, 'left' | 'right'> {
+  extends Omit<PolicyholderInfo, 'introducer_code' | 'left' | 'right'> {
+  introducerCode: string | null;
   left?: PolicyholderTreeNode;
   level: number;
   right?: PolicyholderTreeNode;
