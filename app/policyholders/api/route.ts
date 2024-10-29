@@ -3,27 +3,13 @@ import { useQuery } from '@tanstack/react-query';
 import { Route } from '@/app/lib/routes';
 import request, { type QueryOptions } from '@/app/api/request';
 import { buildTree } from '@/app/policyholders/lib/utils';
+import {
+  type PolicyholderInfo,
+  type PolicyholderTreeNode,
+} from '@/app/policyholders/lib/type';
 
 interface GetPolicyholdersPayload {
   code: string;
-}
-
-export interface PolicyholderInfo {
-  code: string;
-  introducer_code: string | null;
-  name: string;
-  /** date string eg. 2022-10-23 */
-  registration_date: string;
-  left?: PolicyholderInfo[];
-  right?: PolicyholderInfo[];
-}
-
-export interface PolicyholderTreeNode
-  extends Omit<PolicyholderInfo, 'introducer_code' | 'left' | 'right'> {
-  introducerCode: string | null;
-  left?: PolicyholderTreeNode;
-  level: number;
-  right?: PolicyholderTreeNode;
 }
 
 export const useGetPolicyholders = (

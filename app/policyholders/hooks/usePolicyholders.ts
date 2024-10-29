@@ -3,9 +3,12 @@ import { useCallback, useState } from 'react';
 import {
   useGetPolicyholders,
   useGetTopPolicyholders,
-  type PolicyholderTreeNode,
-} from '@/app/api/route';
+} from '@/app/policyholders/api/route';
 import { findSubtree } from '@/app/policyholders/lib/utils';
+import {
+  type PolicyholderTreeNode,
+  type SearchParams,
+} from '@/app/policyholders/lib/type';
 
 const usePolicyHoldersData = (code: string, target: 'self' | 'top') => {
   const policyholdersRes = useGetPolicyholders(
@@ -21,19 +24,14 @@ const usePolicyHoldersData = (code: string, target: 'self' | 'top') => {
   return target === 'self' ? policyholdersRes : topPolicyholdersRes;
 };
 
-interface SearchParams {
-  target: 'top' | 'self';
-  code: string;
-}
-
-interface PolicyholdersRes {
+interface UsePolicyholdersRes {
   error: Error | null;
-  policyholderTree: PolicyholderTreeNode | undefined;
+  root: PolicyholderTreeNode | undefined;
   handleSearchSubtree: (subCode: string) => void;
   handleSearchTree: (target: 'self' | 'top') => (newCode: string) => void;
 }
 
-const usePolicyholders = (): PolicyholdersRes => {
+const usePolicyholders = (): UsePolicyholdersRes => {
   const [searchParams, setSearchParams] = useState<SearchParams>({
     code: '',
     target: 'self',
@@ -59,11 +57,11 @@ const usePolicyholders = (): PolicyholdersRes => {
     [policyholdersData]
   );
 
-  const policyholderTree = subtree || policyholdersData;
+  const root = subtree || policyholdersData;
 
   return {
     error,
-    policyholderTree,
+    root,
     handleSearchSubtree,
     handleSearchTree,
   };

@@ -1,17 +1,7 @@
-import { type PolicyholderTreeNode } from '@/app/api/route';
 import { MAX_SUBTREE_LEVEL } from '@/app/policyholders/lib/utils';
+import { type UseTreeNodeProps } from '@/app/policyholders/lib/type';
 
-interface PolicyholderTreePayload {
-  node: Pick<
-    PolicyholderTreeNode,
-    'code' | 'introducerCode' | 'left' | 'level' | 'right'
-  >;
-  root: Pick<PolicyholderTreeNode, 'code' | 'level'>;
-  onClickCode: (code: string) => void;
-  onClickTop?: (code: string) => void;
-}
-
-interface PolicyholderTreeRes {
+interface UseTreeNodeRes {
   isChild: boolean;
   isRoot: boolean;
   showSubtree: boolean;
@@ -20,12 +10,12 @@ interface PolicyholderTreeRes {
   handleClickTop?: () => void;
 }
 
-const usePolicyholderTree = ({
+const useTreeNode = ({
   node: { code, introducerCode, left, level, right },
   root,
   onClickCode,
   onClickTop,
-}: PolicyholderTreePayload): PolicyholderTreeRes => {
+}: UseTreeNodeProps): UseTreeNodeRes => {
   const isChild = root.code === introducerCode;
   const isRoot = root.code === code;
   const isValidLevel = level - root.level < MAX_SUBTREE_LEVEL;
@@ -52,4 +42,4 @@ const usePolicyholderTree = ({
   };
 };
 
-export default usePolicyholderTree;
+export default useTreeNode;
