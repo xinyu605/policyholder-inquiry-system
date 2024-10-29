@@ -2,32 +2,29 @@ import { type FC } from 'react';
 import clsx from 'clsx';
 
 import { type PolicyholderTreeNode } from '@/app/api/route';
-import { MAX_SUBTREE_LEVEL } from '@/app/policyholders/lib/utils';
+import usePolicyholderTree from '@/app/policyholders/hooks/usePolicyholderTree';
 
 interface TreeNodeProps {
   root: Pick<PolicyholderTreeNode, 'code' | 'level'>;
   node: PolicyholderTreeNode;
-  onClick: (code: string) => void;
+  onClickCode: (code: string) => void;
   onClickTop?: (code: string) => void;
 }
 
 const TreeNode: FC<TreeNodeProps> = ({
   root,
-  node: { code, introducerCode, name, left, level, right },
-  onClick,
+  node,
+  onClickCode,
   onClickTop,
 }) => {
-  const isRoot = root.code === code;
-  const isChild = root.code === introducerCode;
-  const isValidLevel = level - root.level < MAX_SUBTREE_LEVEL;
-
-  const handleClickCode = () => {
-    onClick(code);
-  };
-
-  const handleClickTop = (introCode: string) => () => {
-    onClickTop?.(introCode);
-  };
+  const { code, name, left, right } = node;
+  const { isChild, isRoot, showSubtree, handleClickCode, handleClickTop } =
+    usePolicyholderTree({
+      node,
+      root,
+      onClickCode,
+      onClickTop,
+    });
 
   return (
     <div className="flex flex-col items-center mx-3">
@@ -51,19 +48,19 @@ const TreeNode: FC<TreeNodeProps> = ({
           </button>
           <p>{name}</p>
         </div>
-        {isRoot && introducerCode && (
+        {handleClickTop && (
           <button
             className={clsx(
               'p-2 bg-slate-100 rounded text-center',
               'hover:bg-slate-200'
             )}
-            onClick={handleClickTop(introducerCode)}
+            onClick={handleClickTop}
           >
             上一階
           </button>
         )}
       </div>
-      {isValidLevel && (left || right) && (
+      {showSubtree && (
         <div
           className={clsx(
             'flex justify-center mt-4 relative',
@@ -81,7 +78,7 @@ const TreeNode: FC<TreeNodeProps> = ({
                   )}
                 />
               )}
-              <TreeNode root={root} node={left} onClick={onClick} />
+              <TreeNode root={root} node={left} onClickCode={onClickCode} />
             </div>
           )}
           {right && (
@@ -92,7 +89,7 @@ const TreeNode: FC<TreeNodeProps> = ({
                   'h-8 w-1/2 mr-auto'
                 )}
               />
-              <TreeNode root={root} node={right} onClick={onClick} />
+              <TreeNode root={root} node={right} onClickCode={onClickCode} />
             </div>
           )}
         </div>
@@ -102,13 +99,13 @@ const TreeNode: FC<TreeNodeProps> = ({
 };
 
 interface PolicyholderTreeProps
-  extends Pick<TreeNodeProps, 'onClick' | 'onClickTop'> {
+  extends Pick<TreeNodeProps, 'onClickCode' | 'onClickTop'> {
   root: PolicyholderTreeNode;
 }
 
 const PolicyholderTree: FC<PolicyholderTreeProps> = ({
   root,
-  onClick,
+  onClickCode,
   onClickTop,
 }) => {
   return (
@@ -116,7 +113,7 @@ const PolicyholderTree: FC<PolicyholderTreeProps> = ({
       <TreeNode
         node={root}
         root={root}
-        onClick={onClick}
+        onClickCode={onClickCode}
         onClickTop={onClickTop}
       />
     </div>
