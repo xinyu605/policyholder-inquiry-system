@@ -9,26 +9,29 @@ export const buildTree = (
   policyholder: PolicyholderInfo,
   level = 0
 ): PolicyholderTreeNode => {
-  const { left, right, ...rest } = policyholder;
+  const { introducer_code, left, right, ...rest } = policyholder;
+  const getSubtree = (nodes?: PolicyholderInfo[]) =>
+    nodes && nodes.length > 0 ? buildTree(nodes[0], level + 1) : undefined;
+
   return {
     ...rest,
+    introducerCode: introducer_code,
     level: level,
-    left: left && left.length > 0 ? buildTree(left[0], level + 1) : undefined,
-    right:
-      right && right.length > 0 ? buildTree(right[0], level + 1) : undefined,
+    left: getSubtree(left),
+    right: getSubtree(right),
   };
 };
 
-export const findSubTree = (
+export const findSubtree = (
   tree: PolicyholderTreeNode | undefined,
   code: string
 ): PolicyholderTreeNode | undefined => {
   if (!tree) return undefined;
   if (tree?.code === code) return tree;
 
-  const leftTree = findSubTree(tree?.left, code);
+  const leftTree = findSubtree(tree?.left, code);
   if (leftTree) return leftTree;
 
-  const rightTree = findSubTree(tree?.right, code);
+  const rightTree = findSubtree(tree?.right, code);
   return rightTree;
 };
