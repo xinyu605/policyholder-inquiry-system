@@ -1,7 +1,7 @@
 import {
   type PolicyholderInfo,
   type PolicyholderTreeNode,
-} from '@/app/policyholders/lib/type';
+} from '@/app/lib/policyholders/type';
 
 export const MAX_SUBTREE_LEVEL = 3;
 

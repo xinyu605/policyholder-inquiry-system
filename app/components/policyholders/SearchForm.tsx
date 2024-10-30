@@ -2,8 +2,8 @@
 
 import { type FC } from 'react';
 
-import useSearchForm from '@/app/policyholders/hooks/useSearchForm';
-import { type SearchFormProps } from '@/app/policyholders/lib/type';
+import useSearchForm from '@/app/hooks/policyholders/useSearchForm';
+import { type SearchFormProps } from '@/app/lib/policyholders/type';
 
 const SearchForm: FC<SearchFormProps> = ({ value: initialValue, onSearch }) => {
   const { value, handleChange, handleSubmit } = useSearchForm({

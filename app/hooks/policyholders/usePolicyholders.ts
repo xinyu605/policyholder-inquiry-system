@@ -3,13 +3,13 @@ import { useCallback, useState } from 'react';
 import {
   useGetPolicyholders,
   useGetTopPolicyholders,
-} from '@/app/policyholders/api/route';
-import { findSubtree } from '@/app/policyholders/lib/utils';
+} from '@/app/api/policyholders';
+import { findSubtree } from '@/app/lib/policyholders/utils';
 import {
   SearchTarget,
   type PolicyholderTreeNode,
   type SearchParams,
-} from '@/app/policyholders/lib/type';
+} from '@/app/lib/policyholders/type';
 
 const usePolicyHoldersData = (code: string, target: SearchTarget) => {
   const policyholdersRes = useGetPolicyholders(

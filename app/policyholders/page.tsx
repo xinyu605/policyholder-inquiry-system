@@ -2,11 +2,11 @@
 
 import { type FC } from 'react';
 
-import { SearchTarget } from '@/app/policyholders/lib/type';
-import usePolicyholders from '@/app/policyholders/hooks/usePolicyholders';
+import { SearchTarget } from '@/app/lib/policyholders/type';
+import usePolicyholders from '@/app/hooks/policyholders/usePolicyholders';
 
-import SearchForm from '@/app/policyholders/components/Policyholder.SearchForm';
-import Tree from '@/app/policyholders/components/Policyholder.Tree';
+import SearchForm from '@/app/components/policyholders/SearchForm';
+import Tree from '@/app/components/policyholders/Tree';
 
 const Policyholders: FC = () => {
   const { error, root, handleSearchSubtree, handleSearchTree } =

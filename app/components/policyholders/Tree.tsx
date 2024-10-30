@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import clsx from 'clsx';
 
-import useTreeNode from '@/app/policyholders/hooks/useTreeNode';
+import useTreeNode from '@/app/hooks/policyholders/useTreeNode';
 import {
   type TreeNodeProps,
   type TreeProps,
