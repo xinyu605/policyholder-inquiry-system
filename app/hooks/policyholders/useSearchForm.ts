@@ -2,13 +2,13 @@ import {
   type ChangeEvent,
   type ChangeEventHandler,
   type FormEvent,
-  FormEventHandler,
+  type FormEventHandler,
   useCallback,
   useEffect,
   useState,
 } from 'react';
 
-import { type SearchFormProps } from '@/app/policyholders/lib/type';
+import { type SearchFormProps } from '@/app/lib/policyholders/type';
 
 interface PolicyholderSearchFormRes {
   value: string;

@@ -2,11 +2,11 @@ import { useQuery } from '@tanstack/react-query';
 
 import { Route } from '@/app/lib/routes';
 import request, { type QueryOptions } from '@/app/api/request';
-import { buildTree } from '@/app/policyholders/lib/utils';
+import { buildTree } from '@/app/lib/policyholders/utils';
 import {
   type PolicyholderInfo,
   type PolicyholderTreeNode,
-} from '@/app/policyholders/lib/type';
+} from '@/app/lib/policyholders/type';
 
 interface GetPolicyholdersPayload {
   code: string;

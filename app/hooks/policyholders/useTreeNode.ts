@@ -1,5 +1,5 @@
-import { MAX_SUBTREE_LEVEL } from '@/app/policyholders/lib/utils';
-import { type UseTreeNodeProps } from '@/app/policyholders/lib/type';
+import { MAX_SUBTREE_LEVEL } from '@/app/lib/policyholders/utils';
+import { type UseTreeNodeProps } from '@/app/lib/policyholders/type';
 
 interface UseTreeNodeRes {
   isChild: boolean;
