@@ -5,7 +5,7 @@ import useTreeNode from '@/app/hooks/policyholders/useTreeNode';
 import {
   type TreeNodeProps,
   type TreeProps,
-} from '@/app/policyholders/lib/type';
+} from '@/app/lib/policyholders/type';
 
 const TreeNode: FC<TreeNodeProps> = ({
   root,
