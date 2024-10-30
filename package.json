@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "concurrently \"mockoon-cli start --data ./app/mock/policyholder-system.json\" \"next dev\"",
     "build": "next build",
+    "dev": "concurrently \"mockoon-cli start --data ./app/mock/policyholder-system.json\" \"next dev\"",
+    "docker-up": "docker compose up",
+    "docker-down": "docker compose down",
     "start": "next start",
     "lint": "next lint"
   },

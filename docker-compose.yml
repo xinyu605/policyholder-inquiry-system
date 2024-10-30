@@ -1,0 +1,15 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - NODE_ENV=development
+    env_file:
+      - .env
+    ports:
+      - '3000:3000' # Next.js
+      - '3001:3001' # Mockoon
+    volumes:
+      - .:/app
+      - /app/node_modules
